@@ -495,7 +495,7 @@
                 <i class="fas fa-clipboard-list"></i>
                 نظام جمع بيانات الخدمات
             </h1>
-            <p>اكتب الخدمات والملاحظات بنفسك - نظام متكامل لجمع البيانات الميدانية</p>
+            <p> Eng Ammar Mohamed - نظام متكامل لجمع البيانات الميدانية</p>
         </div>
         
         <!-- التبويبات -->
@@ -544,27 +544,29 @@
                             <input type="text" 
                                    class="form-input" 
                                    id="area" 
-                                   placeholder="مثال: حي الياسمين، المنطقة الصناعية" 
+                                   
+
                                    required>
                             <div class="input-hint">
                                 <i class="fas fa-info-circle"></i>
-                                اكتب اسم الحي أو المنطقة بدقة
+                                
+                          المنطقة 
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label class="form-label required">
                                 <i class="fas fa-building"></i>
-                                اسم / رقم المبنى
+                                الحي  
                             </label>
                             <input type="text" 
                                    class="form-input" 
                                    id="building" 
-                                   placeholder="مثال: عمارة 15، برج النور" 
+                                   
                                    required>
                             <div class="input-hint">
                                 <i class="fas fa-info-circle"></i>
-                                أي اسم أو رقم يميز المبنى
+                                
                             </div>
                         </div>
                     </div>
@@ -626,10 +628,10 @@
                         <textarea class="form-textarea services-textarea" 
                                   id="services" 
                                   rows="3"
-                                  placeholder="مثال: صيدلية 24 ساعة، مركز صيانة سيارات، سوبر ماركت، عيادة أسنان، مغسلة ملابس، مقهى إنترنت..."></textarea>
+                                  ></textarea>
                         <div class="input-hint">
                             <i class="fas fa-lightbulb"></i>
-                            اكتب كل خدمة مفصولة بفاصلة أو سطر جديد
+                        اكتب كل خدمة مفصولة بفاصلة   
                         </div>
                     </div>
                     
@@ -648,7 +650,7 @@
                                id="distance" 
                                min="0" 
                                step="0.1"
-                               placeholder="مثال: 1.5 كم">
+                               >
                     </div>
                     
                     <div class="section-title">
@@ -947,7 +949,7 @@
                             <tr>
                                 <th>التاريخ</th>
                                 <th>المنطقة</th>
-                                <th>المبنى</th>
+                                <th>الحي</th>
                                 <th>المجاورات</th>
                                 <th>الشقق</th>
                                 <th>الإشغال</th>
@@ -1171,7 +1173,7 @@ let complaintsHTML = '';
         }
         
         // تحويل البيانات إلى CSV (يمكن فتحه في Excel)
-        const headers = ['التاريخ', 'المنطقة', 'المبنى', 'المجاورات', 'عدد الشقق', 
+        const headers = ['التاريخ', 'المنطقة', 'الحي', 'المجاورات', 'عدد الشقق', 
                        'نسبة الإشغال%', 'السكان المقدر', 'الخدمات المطلوبة', 
                        'مسافة الخدمات (كم)', 'شكاوي السكان', 'ملاحظات ميدانية'];
         
@@ -1204,7 +1206,7 @@ let complaintsHTML = '';
             return;
         }
         
-        const headers = ['التاريخ', 'المنطقة', 'المبنى', 'المجاورات', 'عدد الشقق', 
+        const headers = ['التاريخ', 'المنطقة', 'الحي', 'المجاورات', 'عدد الشقق', 
                        'نسبة الإشغال%', 'الخدمات المطلوبة', 'مسافة الخدمات (كم)', 
                        'شكاوي السكان', 'ملاحظات ميدانية'];
         
