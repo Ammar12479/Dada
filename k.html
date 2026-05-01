@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>خالد | KHALED VISUALS - Portfolio</title>
+    
+    <!-- Google Fonts + Tailwind + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --blue-primary: #3b82f6;
+            --blue-accent: #60a5fa;
+            --blue-glow: rgba(59, 130, 246, 0.4);
+            --dark-bg: #020617;
+            --surface-card: #0f172a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--dark-bg);
+            color: #f8fafc;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .font-en { font-family: 'Montserrat', sans-serif; }
+
+        .hero-aura {
+            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+        }
+
+        /* Tab System Styling */
+        .tab-btn {
+            position: relative;
+            transition: all 0.3s ease;
+            color: #94a3b8;
+        }
+
+        .tab-btn.active {
+            color: white;
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--blue-primary);
+            box-shadow: 0 0 15px var(--blue-glow);
+            border-radius: 10px;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Service Cards Styling */
+        .service-card {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.4));
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--blue-primary);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .tech-frame {
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 2rem;
+            padding: 10px;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .tool-chip {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Category Header */
+        .category-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .category-line::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to left, rgba(59, 130, 246, 0.3), transparent);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 py-5 px-6 md:px-12 bg-black/40 backdrop-blur-xl border-b border-white/5 text-right">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-en font-black tracking-tighter">
+                <span class="text-blue-500">K</span>HALED
+            </div>
+            <div class="hidden lg:flex gap-8 text-[11px] font-bold tracking-[2px] uppercase text-gray-400">
+                <a href="#home" class="hover:text-blue-500 transition">الرئيسية</a>
+                <a href="#explore" class="hover:text-blue-500 transition">استكشف</a>
+                <a href="#contact" class="hover:text-blue-500 transition">تواصل</a>
+            </div>
+            <a href="https://wa.me/201061068055" class="bg-blue-600 text-white font-bold px-6 py-2 rounded-full text-xs hover:bg-white hover:text-black transition-all">
+                مشروع جديد
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="min-h-screen flex items-center pt-24 px-6 md:px-12 hero-aura relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <div class="inline-block px-4 py-1 border border-blue-500/30 rounded-full text-blue-400 text-[10px] font-bold tracking-widest uppercase mb-6 bg-blue-500/5">
+                    مرحباً بك في عالمي البصري
+                </div>
+                <h1 class="text-6xl md:text-8xl font-en font-black leading-tight mb-6">
+                    KHALED <br> <span class="text-blue-500 italic">CREATIVE.</span>
+                </h1>
+                <p class="text-gray-400 text-lg md:text-xl max-w-lg mb-8 leading-relaxed">
+                    متخصص في تحويل الرؤى إلى واقع رقمي مبهر. من المونتاج السينمائي إلى الهوية البصرية المتكاملة.
+                </p>
+                <div class="flex items-center gap-8">
+                    <div>
+                        <span class="block text-4xl font-black text-white font-en">+4</span>
+                        <span class="text-[10px] text-blue-500 uppercase tracking-widest font-bold">Years Exp</span>
+                    </div>
+                    <div class="w-px h-10 bg-white/10"></div>
+                    <div>
+                        <span class="block text-4xl font-black text-white font-en">18</span>
+                        <span class="text-[10px] text-blue-500 uppercase tracking-widest font-bold">Years Old</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center reveal">
+                <div class="tech-frame relative">
+                    <img src="foto/535527549_1307005207700078_4443192993959624898_n.jpg " class="w-80 h-96 md:w-[400px] md:h-[500px] object-cover rounded-2xl shadow-2xl" alt="خالد">
+                    <div class="absolute -bottom-6 -left-6 bg-blue-600 p-5 rounded-2xl shadow-xl hidden md:block animate-bounce">
+                        <i class="fas fa-camera-retro text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPLORE SECTION (TABS) -->
+    <section id="explore" class="py-32 px-6 md:px-12 bg-slate-950/30">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Tab Controls -->
+            <div class="flex justify-center gap-8 md:gap-16 mb-24 border-b border-white/5">
+                <button onclick="openTab(event, 'personal')" class="tab-btn active text-xl md:text-2xl font-black pb-6 px-4">أنا خالد</button>
+                <button onclick="openTab(event, 'services')" class="tab-btn text-xl md:text-2xl font-black pb-6 px-4">خدماتي</button>
+            </div>
+
+            <!-- Tab 1: Personal Details -->
+            <div id="personal" class="tab-content active">
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
+                    <div class="space-y-10">
+                        <div>
+                            <h3 class="text-blue-500 text-xs font-bold uppercase tracking-[6px] mb-6">عن المصمم</h3>
+                            <p class="text-gray-300 text-2xl font-light leading-relaxed">
+                                  <span class="text-white font-bold underline decoration-blue-500 underline-offset-8">خالد</span>، أسعى دائماً لترك بصمة في كل بكسل أقوم بتصميمه. بدأت رحلتي في مصر وشققت طريقي من خلال العمل مع علامات تجارية مختلفة، مما صقل خبرتي في المونتاج وتصميم الجرافيك.
+                            </p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 text-gray-400">
+                                <i class="fas fa-map-marker-alt text-blue-500"></i>
+                                <span>مقر العمل : مصر - متاح للعمل عن بعد </span>
+                            </div>
+                            <div class="flex items-center gap-4 text-gray-400">
+                                <i class="fas fa-check-circle text-blue-500"></i>
+                                <span>متخصص في: Motion Graphics & Brand Identity</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-blue-500/5 p-10 rounded-3xl border border-blue-500/10">
+                        <h3 class="text-white text-xl font-bold mb-8">ترسانة الأدوات</h3>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="tool-chip p-4 rounded-xl flex items-center gap-3">
+                                <i class="fab fa-adobe text-blue-500"></i> Photoshop
+                            </div>
+                            <div class="tool-chip p-4 rounded-xl flex items-center gap-3">
+                                <i class="fas fa-pen-nib text-blue-400"></i> Illustrator
+                            </div>
+                            <div class="tool-chip p-4 rounded-xl flex items-center gap-3">
+                                <i class="fas fa-video text-purple-500"></i> Premiere
+                            </div>
+                            <div class="tool-chip p-4 rounded-xl flex items-center gap-3">
+                                <i class="fas fa-wand-magic-sparkles text-yellow-500"></i> Lightroom
+                            </div>
+                            <div class="tool-chip p-4 rounded-xl flex items-center gap-3">
+                                <i class="fas fa-robot text-green-500"></i> AI Visuals
+                            </div>
+                            <div class="tool-chip p-4 rounded-xl flex items-center gap-3">
+                                <i class="fas fa-layer-group text-pink-500"></i> After Effects
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Services -->
+            <div id="services" class="tab-content">
+                
+                <!-- Category 1: Video & Motion -->
+                <div class="category-line">
+                    <span class="text-blue-500 font-bold tracking-widest text-sm uppercase">صناعة الفيديو</span>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <div class="service-card p-10 rounded-[2rem]">
+                        <i class="fas fa-film text-4xl text-blue-500 mb-6 block"></i>
+                        <h4 class="text-2xl font-bold mb-4">مونتاج فيديو سينمائي</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">تعديل احترافي للفيديوهات، تصحيح ألوان، وإضافة مؤثرات بصرية تزيد من جاذبية المحتوى.</p>
+                    </div>
+                    <div class="service-card p-10 rounded-[2rem]">
+                        <i class="fas fa-play-circle text-4xl text-blue-500 mb-6 block"></i>
+                        <h4 class="text-2xl font-bold mb-4">فيديوهات السوشيال</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">تجهيز فيديوهات Reels, TikTok, و YouTube Shorts بشكل مخصص لزيادة الانتشار.</p>
+                    </div>
+                    <div class="service-card p-10 rounded-[2rem]">
+                        <i class="fas fa-robot text-4xl text-blue-500 mb-6 block"></i>
+                        <h4 class="text-2xl font-bold mb-4">AI Video Production</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">استخدام أدوات الذكاء الاصطناعي لإنتاج فيديوهات مبتكرة وسريعة بجودة عالمية.</p>
+                    </div>
+                </div>
+
+                <!-- Category 2: Graphic Design -->
+                <div class="category-line">
+                    <span class="text-blue-500 font-bold tracking-widest text-sm uppercase">الهوية والتصميم</span>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <div class="service-card p-10 rounded-[2rem]">
+                        <i class="fas fa-gem text-4xl text-blue-500 mb-6 block"></i>
+                        <h4 class="text-2xl font-bold mb-4">تصميم الشعارات</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">ابتكار رموز تعبر عن جوهر علامتك التجارية وتظل عالقة في أذهان العملاء.</p>
+                    </div>
+                    <div class="service-card p-10 rounded-[2rem]">
+                        <i class="fas fa-bullhorn text-4xl text-blue-500 mb-6 block"></i>
+                        <h4 class="text-2xl font-bold mb-4">بوسترات السوشيال</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">تصميم منشورات يومية وإعلانات ممولة تضمن لعلامتك التميز في ساحة المنافسة.</p>
+                    </div>
+                    <div class="service-card p-10 rounded-[2rem]">
+                        <i class="fas fa-id-card text-4xl text-blue-500 mb-6 block"></i>
+                        <h4 class="text-2xl font-bold mb-4">الهوية البصرية</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">تصميم غلاف، بزنس كارد، وكافة المطبوعات لتوحيد مظهر علامتك التجارية.</p>
+                    </div>
+                </div>
+
+                <!-- Category 3: Special Services -->
+                <div class="category-line">
+                    <span class="text-blue-500 font-bold tracking-widest text-sm uppercase">خدمات خاصة</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="service-card p-10 rounded-[2rem] flex flex-col md:flex-row gap-8 items-center text-center md:text-right">
+                        <i class="fas fa-utensils text-5xl text-blue-500"></i>
+                        <div>
+                            <h4 class="text-2xl font-bold mb-2">تصميم منيو مطاعم</h4>
+                            <p class="text-gray-400 text-sm">تنسيق قوائم الطعام بشكل جذاب يزيد من شهية العميل ويسهل عملية الطلب.</p>
+                        </div>
+                    </div>
+                    <div class="service-card p-10 rounded-[2rem] flex flex-col md:flex-row gap-8 items-center text-center md:text-right">
+                        <i class="fas fa-heart text-5xl text-blue-500"></i>
+                        <div>
+                            <h4 class="text-2xl font-bold mb-2">كروت أفراح ومناسبات</h4>
+                            <p class="text-gray-400 text-sm">تصاميم راقية تليق بأهم لحظات حياتك، بلمسة عصرية وتفاصيل دقيقة.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT AREA -->
+    <section id="contact" class="py-40 px-6 bg-black relative">
+        <div class="absolute inset-0 bg-blue-600/5 blur-3xl rounded-full scale-50"></div>
+        <div class="max-w-4xl mx-auto text-center relative reveal">
+            <h2 class="text-6xl md:text-8xl font-black italic mb-10 leading-tight uppercase">لنبدأ <br> <span class="text-blue-500">الرحلة الآن.</span></h2>
+            <div class="bg-blue-600/10 border border-blue-500/20 p-10 rounded-3xl mb-12 backdrop-blur-md">
+                <p class="text-2xl mb-8 font-light italic">"خبرة 4 سنوات من أجل إخراج فكرتك للواقع."</p>
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <a href="https://wa.me/201061068055" class="bg-blue-600 text-white px-12 py-5 rounded-2xl font-bold text-xl hover:scale-105 transition-all shadow-xl shadow-blue-900/30">
+                        <i class="fab fa-whatsapp ml-2"></i> 01061068055
+                    </a>
+                </div>
+            </div>
+            <p class="text-gray-500 font-en tracking-widest text-xs uppercase">khaledalbasha2007@gmail.com</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-white/5 text-center bg-slate-950">
+        <p class="text-[10px] text-gray-500 uppercase tracking-[15px] font-en mb-2">KHALED</p>
+        <p class="text-[9px] text-gray-700 uppercase tracking-widest">© 2024 Visual Artist - Based in Egypt</p>
+    </footer>
+
+    <script>
+        // Enhanced Tab Switcher
+        function openTab(evt, tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+            
+            contents.forEach(c => {
+                c.style.display = "none";
+                c.classList.remove('active');
+            });
+            
+            buttons.forEach(b => b.classList.remove('active'));
+            
+            const activeTab = document.getElementById(tabName);
+            activeTab.style.display = "block";
+            setTimeout(() => activeTab.classList.add('active'), 10);
+            
+            evt.currentTarget.classList.add('active');
+        }
+
+        // Scroll Reveal Implementation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
